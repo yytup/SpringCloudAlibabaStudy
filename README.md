@@ -1,2 +1,2 @@
 # SpringCloudAlibabaStudy
-希望快速高校的学完springcloudAlibaba
+希望快速高效的学完springcloudAlibaba
