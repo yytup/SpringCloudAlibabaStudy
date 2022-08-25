@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 public class ApplicationContextConfig {
 
     @Bean
-    @LoadBalanced
+//    @LoadBalanced   手写轮询算法暂时关闭掉
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }

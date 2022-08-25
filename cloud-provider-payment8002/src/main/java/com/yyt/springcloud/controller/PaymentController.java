@@ -45,6 +45,11 @@ public class PaymentController {
         }else{
             return new CommonResult(444,"没有对应记录,查询ID: "+id,null);
         }
+    }
 
+    // 手写轮询算法接口
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB() {
+        return serverPort;//返回服务接口
     }
 }

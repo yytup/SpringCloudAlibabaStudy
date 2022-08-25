@@ -54,6 +54,7 @@ public class PaymentController {
             return new CommonResult(444,"没有对应记录,查询ID: "+id,null);
         }
     }
+
     @GetMapping("/payment/discovery")
     public Object discovery(){
         List<String> services = discoveryClient.getServices();
@@ -66,5 +67,11 @@ public class PaymentController {
             log.info(instance.getServiceId()+"\t"+instance.getHost()+"\t"+instance.getPort()+"\t"+instance.getUri());
         }
         return discoveryClient;
+    }
+
+    // 手写轮询算法接口
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB() {
+        return serverPort;//返回服务接口
     }
 }
