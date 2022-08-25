@@ -30,6 +30,7 @@ public class OrderController {
     public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
     @Resource
     private RestTemplate restTemplate;
+
     @Resource
     private LoadBalancer loadBalancer;
 
@@ -57,8 +58,7 @@ public class OrderController {
     }
 
     @GetMapping(value = "/consumer/payment/lb")
-    public String getPaymentLB()
-    {
+    public String getPaymentLB() {
         List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
 
         if(instances == null || instances.size() <= 0){
